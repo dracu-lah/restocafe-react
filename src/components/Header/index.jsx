@@ -1,5 +1,5 @@
 import { ShoppingCartIcon } from "lucide-react";
-const Header = ({ restaurant }) => {
+const Header = ({ restaurant, cart }) => {
   return (
     <header className="border-b-2 border-black/0  flex p-4 justify-between">
       <h1 className="text-red-500 font-semibold text-2xl">
@@ -10,7 +10,7 @@ const Header = ({ restaurant }) => {
         <button>My Orders</button>
         <div className="relative">
           <div className="absolute bg-red-500 rounded-full size-6 -top-3 -right-2 flex justify-center items-center font-semibold text-white text-xs">
-            <h1>100</h1>
+            <h1>{cart.length}</h1>
           </div>
           <button>
             <ShoppingCartIcon />

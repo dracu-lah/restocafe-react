@@ -12,6 +12,7 @@ const App = () => {
   });
 
   const [selectedCategory, setSelectedCategory] = useState(0);
+  const [cart, setCart] = useState([]);
 
   if (isPending)
     return (
@@ -23,13 +24,17 @@ const App = () => {
   const restaurant = data.data[0];
   return (
     <div>
-      <Header restaurant={restaurant} />
+      <Header restaurant={restaurant} cart={cart} />
       <DishCategories
         restaurant={restaurant}
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
       />
-      <Dishes restaurant={restaurant} selectedCategory={selectedCategory} />
+      <Dishes
+        restaurant={restaurant}
+        selectedCategory={selectedCategory}
+        setCart={setCart}
+      />
     </div>
   );
 };
