@@ -5,6 +5,13 @@ import { handleCart } from "@/utils/handleCart";
 const Cart = () => {
   const { cart, setCart } = useRestaurantContext();
 
+  const calcSubtotal = () => {
+    let subTotal = 0;
+    cart.forEach((dish) => {
+      subTotal = subTotal + dish.dish_price * dish.quantity;
+    });
+    return subTotal;
+  };
   return (
     <div className="flex flex-col gap-2 mt-4 ">
       <h1 className="text-4xl font-semibold p-4 underline ">Cart</h1>
@@ -71,6 +78,17 @@ const Cart = () => {
           </div>
         );
       })}
+
+      {cart.length > 0 && (
+        <div className="px-8 py-4">
+          <h2 className="text-right text-2xl  ">
+            Subtotal:{" "}
+            <span className="">
+              {cart[0].dish_currency} {calcSubtotal()}
+            </span>
+          </h2>
+        </div>
+      )}
       <div className="mt-4 mb-10 flex justify-center items-center">
         <button
           onClick={() => setCart([])}
