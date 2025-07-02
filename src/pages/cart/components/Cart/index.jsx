@@ -84,7 +84,7 @@ const Cart = () => {
           <h2 className="text-right text-2xl  ">
             Subtotal:{" "}
             <span className="">
-              {cart[0].dish_currency} {calcSubtotal()}
+              {cart[0].dish_currency} {calcSubtotal().toFixed(2)}
             </span>
           </h2>
         </div>
