@@ -28,9 +28,14 @@ const App = () => {
 
         <div className="  flex gap-4 justify-between">
           <button>My Orders</button>
-          <button>
-            <ShoppingCartIcon />
-          </button>
+          <div className="relative">
+            <div className="absolute bg-red-500 rounded-full size-6 -top-3 -right-2 flex justify-center items-center font-semibold text-white text-xs">
+              <h1>100</h1>
+            </div>
+            <button>
+              <ShoppingCartIcon />
+            </button>
+          </div>
         </div>
       </header>
 
