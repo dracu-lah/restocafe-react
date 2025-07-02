@@ -6,8 +6,8 @@ const Cart = () => {
   const { cart, setCart } = useRestaurantContext();
 
   return (
-    <div className="flex flex-col gap-4 mt-4 ">
-      <h1 className="text-4xl font-semibold p-4 underline">Cart</h1>
+    <div className="flex flex-col gap-2 mt-4 ">
+      <h1 className="text-4xl font-semibold p-4 underline ">Cart</h1>
       {cart.length <= 0 && (
         <h2 className="text-center text-xl ">Cart Is Empty!</h2>
       )}
@@ -18,7 +18,7 @@ const Cart = () => {
         return (
           <div
             key={dish.dish_id}
-            className="justify-between border-y-2 p-4 border-black/10 flex"
+            className={`justify-between border-b-2 p-4 border-black/10 flex`}
           >
             <div className="flex flex-col justify-between gap-y-4">
               <div className="space-y-2">

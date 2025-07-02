@@ -4,7 +4,7 @@ const DishCategories = () => {
   const { restaurant, selectedCategory, setSelectedCategory } =
     useRestaurantContext();
   return (
-    <div className="border-b-2 border-black/10 flex gap-4 w-full overflow-x-auto whitespace-nowrap ">
+    <div className="border-b-1 sticky  top-0 bg-white border-b-gray-300 flex gap-4 w-full overflow-x-auto whitespace-nowrap ">
       {restaurant.table_menu_list.map((category, index) => (
         <button
           key={index}
