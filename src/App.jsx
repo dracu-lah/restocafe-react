@@ -56,6 +56,11 @@ const App = () => {
                     {dish.dish_currency} {dish.dish_price}
                   </h2>
                   <p className="text-sm opacity-60">{dish.dish_description}</p>
+                  {dish.addonCat && dish.addonCat.length > 0 && (
+                    <span className="text-sm italic font-semibold text-yellow-700">
+                      Customizations Available*
+                    </span>
+                  )}
                 </div>
                 <div className="flex  text-xl  rounded-full items-center w-[130px] h-10 overflow-hidden bg-green-500 text-white font-semibold justify-between">
                   <button className="cursor-pointer h-full  w-full ">-</button>
