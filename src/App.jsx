@@ -49,17 +49,18 @@ const App = () => {
         {restaurant.table_menu_list[selectedCategory].category_dishes.map(
           (dish) => (
             <div className="justify-between border-b-2 p-4 border-black/10  flex">
-              <div className="space-y-2">
-                <h1 className="text-2xl font-semibold">{dish.dish_name}</h1>
-                <h2 className="font-semibold">
-                  {dish.dish_currency} {dish.dish_price}
-                </h2>
-                <p className="text-sm opacity-60">{dish.dish_description}</p>
-
-                <div className="flex  text-xl  rounded-full items-center h-10 overflow-hidden bg-green-500 text-white font-semibold justify-between">
-                  <button className=" h-full  w-full ">-</button>
+              <div className="flex flex-col justify-between gap-y-4">
+                <div className="space-y-2">
+                  <h1 className="text-2xl font-semibold">{dish.dish_name}</h1>
+                  <h2 className="font-semibold">
+                    {dish.dish_currency} {dish.dish_price}
+                  </h2>
+                  <p className="text-sm opacity-60">{dish.dish_description}</p>
+                </div>
+                <div className="flex  text-xl  rounded-full items-center w-[130px] h-10 overflow-hidden bg-green-500 text-white font-semibold justify-between">
+                  <button className="cursor-pointer h-full  w-full ">-</button>
                   <div>0</div>
-                  <button className=" h-full  w-full ">+</button>
+                  <button className="cursor-pointer h-full  w-full ">+</button>
                 </div>
               </div>
               <div className="flex justify-center items-center gap-4">
