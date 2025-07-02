@@ -33,6 +33,7 @@ const App = () => {
       <Dishes
         restaurant={restaurant}
         selectedCategory={selectedCategory}
+        cart={cart}
         setCart={setCart}
       />
     </div>
