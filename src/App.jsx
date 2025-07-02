@@ -55,6 +55,12 @@ const App = () => {
                   {dish.dish_currency} {dish.dish_price}
                 </h2>
                 <p className="text-sm opacity-60">{dish.dish_description}</p>
+
+                <div className="flex  text-xl  rounded-full items-center h-10 overflow-hidden bg-green-500 text-white font-semibold justify-between">
+                  <button className=" h-full  w-full ">-</button>
+                  <div>0</div>
+                  <button className=" h-full  w-full ">+</button>
+                </div>
               </div>
               <div className="flex justify-center items-center gap-4">
                 <h3 className="whitespace-nowrap text-xs font-semibold">
