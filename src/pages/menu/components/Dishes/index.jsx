@@ -1,46 +1,9 @@
-import { useRestaurantContext } from "../../context/RestaurantContext";
+import { useRestaurantContext } from "@/context/RestaurantContext";
+import { handleCart } from "@/utils/handleCart";
 
 const Dishes = () => {
   const { restaurant, selectedCategory, cart, setCart } =
     useRestaurantContext();
-  const handleCart = (action, item) => {
-    const existingDish = cart.find((d) => d.dish_id === item.dish_id);
-
-    switch (action) {
-      case "increment":
-        if (existingDish) {
-          setCart((prev) =>
-            prev.map((d) =>
-              d.dish_id === item.dish_id
-                ? { ...d, quantity: d.quantity + 1 }
-                : d,
-            ),
-          );
-        } else {
-          setCart((prev) => [...prev, { ...item, quantity: 1 }]);
-        }
-        break;
-
-      case "decrement":
-        if (!existingDish) return;
-        if (existingDish.quantity === 1) {
-          setCart((prev) => prev.filter((d) => d.dish_id !== item.dish_id));
-        } else {
-          setCart((prev) =>
-            prev.map((d) =>
-              d.dish_id === item.dish_id
-                ? { ...d, quantity: d.quantity - 1 }
-                : d,
-            ),
-          );
-        }
-        break;
-
-      default:
-        break;
-    }
-  };
-
   return (
     <div className="flex flex-col gap-4 mt-4">
       {restaurant.table_menu_list[selectedCategory].category_dishes.map(
@@ -74,14 +37,14 @@ const Dishes = () => {
                         : "cursor-pointer"
                     }`}
                     disabled={quantity <= 0}
-                    onClick={() => handleCart("decrement", dish)}
+                    onClick={() => handleCart("decrement", dish, cart, setCart)}
                   >
                     -
                   </button>
                   <div>{quantity}</div>
                   <button
                     className="cursor-pointer h-full w-full"
-                    onClick={() => handleCart("increment", dish)}
+                    onClick={() => handleCart("increment", dish, cart, setCart)}
                   >
                     +
                   </button>

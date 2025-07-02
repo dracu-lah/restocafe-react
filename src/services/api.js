@@ -1,4 +1,4 @@
-import api from "./axiosConfig";
+import api from "./axios";
 import endpoint from "./endpoint";
 export const GetRestaurantDataAPI = async () => {
   try {

@@ -1,4 +1,4 @@
-import { useRestaurantContext } from "../../context/RestaurantContext";
+import { useRestaurantContext } from "@/context/RestaurantContext";
 
 const DishCategories = () => {
   const { restaurant, selectedCategory, setSelectedCategory } =
