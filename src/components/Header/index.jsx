@@ -1,5 +1,7 @@
 import { ShoppingCartIcon } from "lucide-react";
-const Header = ({ restaurant, cart }) => {
+import { useRestaurantContext } from "../../context/RestaurantContext";
+const Header = () => {
+  const { restaurant, cart } = useRestaurantContext();
   return (
     <header className="border-b-2 border-black/0  flex p-4 justify-between">
       <h1 className="text-red-500 font-semibold text-2xl">

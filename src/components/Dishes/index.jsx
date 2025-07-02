@@ -1,4 +1,8 @@
-const Dishes = ({ restaurant, selectedCategory, cart, setCart }) => {
+import { useRestaurantContext } from "../../context/RestaurantContext";
+
+const Dishes = () => {
+  const { restaurant, selectedCategory, cart, setCart } =
+    useRestaurantContext();
   const handleCart = (action, item) => {
     const existingDish = cart.find((d) => d.dish_id === item.dish_id);
 

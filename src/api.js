@@ -5,6 +5,6 @@ export const GetRestaurantDataAPI = async () => {
     const { data } = await api.get(endpoint.restaurant);
     return data;
   } catch (error) {
-    return error;
+    throw error;
   }
 };

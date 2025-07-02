@@ -1,8 +1,8 @@
-const DishCategories = ({
-  restaurant,
-  selectedCategory,
-  setSelectedCategory,
-}) => {
+import { useRestaurantContext } from "../../context/RestaurantContext";
+
+const DishCategories = () => {
+  const { restaurant, selectedCategory, setSelectedCategory } =
+    useRestaurantContext();
   return (
     <div className="border-b-2 border-black/10 flex gap-4 w-full overflow-x-auto whitespace-nowrap ">
       {restaurant.table_menu_list.map((category, index) => (
