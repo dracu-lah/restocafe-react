@@ -22,7 +22,9 @@ const Dishes = () => {
                   <h2 className="font-semibold">
                     {dish.dish_currency} {dish.dish_price}
                   </h2>
-                  <p className="text-sm opacity-60">{dish.dish_description}</p>
+                  <p className="text-sm md:text-base opacity-60">
+                    {dish.dish_description}
+                  </p>
                   {dish.addonCat?.length > 0 && (
                     <span className="text-sm italic font-semibold text-yellow-700">
                       Customizations Available*
@@ -51,7 +53,7 @@ const Dishes = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center gap-4">
-                <h3 className="whitespace-nowrap text-xs font-semibold">
+                <h3 className="whitespace-nowrap text-xs md:text-lg lg:pr-20 font-semibold">
                   {dish.dish_calories} Calories
                 </h3>
                 <div className="size-40 overflow-hidden rounded-lg object-cover border-2 border-black/10">
