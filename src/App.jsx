@@ -60,7 +60,7 @@ const App = () => {
                 <h3 className="whitespace-nowrap text-xs font-semibold">
                   {dish.dish_calories} Calories
                 </h3>
-                <div className="size-40 overflow-hidden rounded-lg object-cover border-b-2 border-black/20">
+                <div className="size-40 overflow-hidden rounded-lg object-cover border-2 border-black/10 ">
                   <img
                     src={dish.dish_image}
                     className="size-full"
